@@ -1,0 +1,6 @@
+@TrulyExplorer.WebApi_HostAddress = http://localhost:5017
+
+GET {{TrulyExplorer.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
