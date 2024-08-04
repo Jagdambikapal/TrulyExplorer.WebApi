@@ -13,6 +13,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IBookingService, BookingService>();
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
+builder.Services.AddScoped<IHotelService, HotelService>();  
+builder.Services.AddScoped<IHotelRepository, HotelRepository>();
+
 
 var app = builder.Build();
 
