@@ -15,7 +15,16 @@ builder.Services.AddScoped<IBookingService, BookingService>();
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 builder.Services.AddScoped<IHotelService, HotelService>();  
 builder.Services.AddScoped<IHotelRepository, HotelRepository>();
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder =>
+        {
+            builder.AllowAnyOrigin() // Allows all origins
+                   .AllowAnyMethod() // Allows all HTTP methods
+                   .AllowAnyHeader(); // Allows all headers
+        });
+});
 
 var app = builder.Build();
 
@@ -25,7 +34,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors("AllowAllOrigins");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

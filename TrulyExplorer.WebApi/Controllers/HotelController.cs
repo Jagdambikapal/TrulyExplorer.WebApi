@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
 using TrulyExplorer.WebApi.HotelDto;
@@ -8,6 +9,7 @@ namespace TrulyExplorer.WebApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [EnableCors("AllowAllOrigins")]
     public class HotelController : ControllerBase
     {
         private readonly IHotelService _hotelService;
