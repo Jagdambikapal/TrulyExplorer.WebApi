@@ -19,6 +19,7 @@ namespace TrulyExplorer.WebApi.Controllers
         [HttpGet]
         public IActionResult GetAllBookings()
         {
+           //get all booking
             var bookings = _bookingService.GetAllBookings();
             return Ok(bookings);
         }
