@@ -53,4 +53,4 @@ jobs:
           app-name: 'TrulryExplorer'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3D6E9ED63DDC451B8DBB4D8D50314CC5 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_777EFDC3F05D401EACE2CB5DA20A6101 }}
