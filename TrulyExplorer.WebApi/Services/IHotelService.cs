@@ -1,13 +1,13 @@
-﻿using TrulyExplorer.WebApi.HotelDto;
+﻿using System;
+using System.Collections.Generic;
+using TrulyExplorer.WebApi.HotelDto;
+using TrulyExplorer.WebApi.Models;
 
-namespace TrulyExplorer.WebApi.Services
+public interface IHotelService
 {
-    public interface IHotelService
-    {
-        IEnumerable<HotelDTO> GetAllHotels();
-        HotelDTO GetHotelById(int id);
-        void AddHotel(HotelDTO hotel);
-        void UpdateHotel(HotelDTO hotel);
-        void DeleteHotel(int id);
-    }
+    IEnumerable<HotelDTO> GetAllHotels();
+    void AddHotel(Hotel hotel);
+    void UpdateHotel(Hotel hotel);
+    void DeleteHotel(int id);
+    List<Hotel> SearchHotels(string location, DateTime date, int numberOfAdults);
 }
